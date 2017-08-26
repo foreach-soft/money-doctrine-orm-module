@@ -1,0 +1,22 @@
+{
+  "name": "fes/money-doctrine-orm-module",
+  "description": "Zend framework doctrine implementation of fes/money",
+  "license": "MIT",
+  "homepage": "https://github.com/foreach-soft/money-doctrine-orm-module",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Itach1Uchixa",
+      "email": "kakjavlon@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "fes/money": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fes\\Money\\DoctrineOrmModule\\": "src/"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<doctrine-mapping>
+    <embeddable name="Fes\Money\Money">
+        <field name="amount" type="float" />
+        <field name="currency" type="fes_money_currency" />
+    </embeddable>
+</doctrine-mapping>
