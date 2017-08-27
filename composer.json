@@ -10,6 +10,11 @@
       "email": "kakjavlon@gmail.com"
     }
   ],
+  "extra": {
+    "zf": {
+      "module": "Fes\\Money\\DoctrineOrmModule"
+    }
+  },
   "require": {
     "php": ">=7.0",
     "fes/money": "dev-master",
