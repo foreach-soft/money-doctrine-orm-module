@@ -9,10 +9,37 @@ namespace Fes\Money\DoctrineOrmModule\Type;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
+use Fes\Money\Currency\CurrencyInterface;
+use Fes\Money\DoctrineOrmModule\Exception\CurrencyNotMappedException;
+use Fes\Money\DoctrineOrmModule\Exception\InvalidArgumentException;
 
 class CurrencyType extends Type
 {
     const NAME = 'fes_money_currency';
+
+    /**
+     * @var string[]
+     */
+    protected static $classMap = [];
+
+    /**
+     * @param string $name
+     * @param string $class
+     * @throws InvalidArgumentException
+     */
+    public static function map(string $name, string $class)
+    {
+        // class existence check
+        $object = new $class();
+
+        if (!$object instanceof CurrencyInterface) {
+            throw new InvalidArgumentException(
+                sprintf("Class must implement '%s'", CurrencyInterface::class)
+            );
+        }
+
+        self::$classMap[$name] = $class;
+    }
 
     /**
      * @inheritdoc
@@ -32,8 +59,11 @@ class CurrencyType extends Type
      */
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
-        // value will be currency class name
-        return new $value;
+        if (!isset(self::$classMap[$value])) {
+            throw CurrencyNotMappedException::fromDatabaseValue($value);
+        }
+
+        return new self::$classMap[$value];
     }
 
     /**
@@ -41,7 +71,13 @@ class CurrencyType extends Type
      */
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
-        return get_class($value);
+        $databaseValue = array_search(get_class($value), self::$classMap);
+
+        if ($databaseValue === false) {
+            throw CurrencyNotMappedException::fromClassName(get_class($value));
+        }
+
+        return $databaseValue;
     }
 
     /**

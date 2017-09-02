@@ -16,8 +16,8 @@
     }
   },
   "require": {
-    "php": ">=7.0",
-    "fes/money": "dev-master",
+    "php":                          ">=7.0",
+    "fes/money":                    "dev-master",
     "doctrine/doctrine-orm-module": "^1.1"
   },
   "autoload": {

@@ -6,9 +6,24 @@
 namespace Fes\Money\DoctrineOrmModule;
 
 use Doctrine\ORM\Mapping\Driver\XmlDriver;
+use Fes\Money\DoctrineOrmModule\Listener\TypesRegistrationListener;
 use Fes\Money\DoctrineOrmModule\Type\CurrencyType;
+use Fes\Money\Currency\Currencies\Eur;
+use Fes\Money\Currency\Currencies\Gbp;
+use Fes\Money\Currency\Currencies\Rub;
+use Fes\Money\Currency\Currencies\Usd;
+use Fes\Money\Currency\Currencies\Uzs;
+use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
+    'service_manager' => [
+        'factories' => [
+            TypesRegistrationListener::class => InvokableFactory::class,
+        ],
+    ],
+    'listeners' => [
+        TypesRegistrationListener::class,
+    ],
     'doctrine' => [
         'driver' => [
             'fes_money_driver' => [
@@ -27,6 +42,15 @@ return [
                     CurrencyType::NAME => CurrencyType::class,
                 ],
             ],
+        ],
+    ],
+    'fes_money_doctrine' => [
+        'currencies' => [
+            'EUR' => Eur::class,
+            'GBP' => Gbp::class,
+            'RUB' => Rub::class,
+            'USD' => Usd::class,
+            'UZS' => Uzs::class,
         ],
     ],
 ];
