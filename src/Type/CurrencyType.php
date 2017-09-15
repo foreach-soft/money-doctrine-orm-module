@@ -24,7 +24,12 @@ class CurrencyType extends Type
     protected static $classMap = [];
 
     /**
-     * @inheritdoc
+     * Converts php value to database value
+     *
+     * @param string|CurrencyInterface $value Class name or object
+     * @return string
+     * @throws ConversionException
+     * @throws CurrencyNotMappedException
      */
     public static function convertToDatabase($value)
     {
@@ -92,13 +97,7 @@ class CurrencyType extends Type
      */
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
-        $databaseValue = array_search(get_class($value), self::$classMap);
-
-        if ($databaseValue === false) {
-            throw CurrencyNotMappedException::fromClassName(get_class($value));
-        }
-
-        return $databaseValue;
+        return self::convertToDatabase($value);
     }
 
     /**
