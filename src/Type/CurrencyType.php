@@ -8,6 +8,7 @@ declare(strict_types=1);
 namespace Fes\Money\DoctrineOrmModule\Type;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
+use Doctrine\DBAL\Types\ConversionException;
 use Doctrine\DBAL\Types\Type;
 use Fes\Money\Currency\CurrencyInterface;
 use Fes\Money\DoctrineOrmModule\Exception\CurrencyNotMappedException;
@@ -21,6 +22,26 @@ class CurrencyType extends Type
      * @var string[]
      */
     protected static $classMap = [];
+
+    /**
+     * @inheritdoc
+     */
+    public static function convertToDatabase($value)
+    {
+        if (!is_subclass_of($value, CurrencyInterface::class)) {
+            throw new ConversionException(
+                sprintf("Invalid currency or given currency not instance of %s", CurrencyInterface::class)
+            );
+        }
+
+        $databaseValue = array_search(is_string($value) ? $value : get_class($value), self::$classMap);
+
+        if ($databaseValue === false) {
+            throw CurrencyNotMappedException::fromClassName(is_string($value) ? $value : get_class($value));
+        }
+
+        return $databaseValue;
+    }
 
     /**
      * @param string $name
