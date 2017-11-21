@@ -6,6 +6,7 @@
 namespace Fes\Money\DoctrineOrmModule;
 
 use Doctrine\ORM\Mapping\Driver\XmlDriver;
+use Fes\Money\Currency\Currencies\NullCurrency;
 use Fes\Money\DoctrineOrmModule\Listener\TypesRegistrationListener;
 use Fes\Money\DoctrineOrmModule\Type\CurrencyType;
 use Fes\Money\Currency\Currencies\Eur;
@@ -46,6 +47,7 @@ return [
     ],
     'fes_money_doctrine' => [
         'currencies' => [
+            'NO_CURRENCY' => NullCurrency::class,
             'EUR' => Eur::class,
             'GBP' => Gbp::class,
             'RUB' => Rub::class,
