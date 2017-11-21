@@ -884,12 +884,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/foreach-soft/money.git",
-                "reference": "5729f112a42fe6c91fa354600d99e5f9e3ca63e4"
+                "reference": "6992f4b2c9afd08aeb37ae7b3b0ecd4ad02d2287"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/foreach-soft/money/zipball/5729f112a42fe6c91fa354600d99e5f9e3ca63e4",
-                "reference": "5729f112a42fe6c91fa354600d99e5f9e3ca63e4",
+                "url": "https://api.github.com/repos/foreach-soft/money/zipball/6992f4b2c9afd08aeb37ae7b3b0ecd4ad02d2287",
+                "reference": "6992f4b2c9afd08aeb37ae7b3b0ecd4ad02d2287",
                 "shasum": ""
             },
             "require": {
@@ -914,7 +914,7 @@
             ],
             "description": "Money library",
             "homepage": "https://github.com/foreach-soft/money",
-            "time": "2017-08-25T16:20:36+00:00"
+            "time": "2017-11-21T08:57:16+00:00"
         },
         {
             "name": "psr/cache",
@@ -1672,16 +1672,16 @@
         },
         {
             "name": "zendframework/zend-http",
-            "version": "dev-develop",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-http.git",
-                "reference": "c8e3397418b8aaa02696d033f9a299732630e26e"
+                "reference": "b382c6e068a2d9c87b7cf0dfe78c6dd19e4ff197"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-http/zipball/c8e3397418b8aaa02696d033f9a299732630e26e",
-                "reference": "c8e3397418b8aaa02696d033f9a299732630e26e",
+                "url": "https://api.github.com/repos/zendframework/zend-http/zipball/b382c6e068a2d9c87b7cf0dfe78c6dd19e4ff197",
+                "reference": "b382c6e068a2d9c87b7cf0dfe78c6dd19e4ff197",
                 "shasum": ""
             },
             "require": {
@@ -1689,19 +1689,18 @@
                 "zendframework/zend-loader": "^2.5.1",
                 "zendframework/zend-stdlib": "^3.1 || ^2.7.7",
                 "zendframework/zend-uri": "^2.5.2",
-                "zendframework/zend-validator": "^2.8.2"
+                "zendframework/zend-validator": "^2.10.1"
             },
             "require-dev": {
-                "malukenho/docheader": "^0.1.5",
-                "phpunit/phpunit": "^6.0.8 || ^5.7.15",
+                "phpunit/phpunit": "^6.4.1 || ^5.7.15",
                 "zendframework/zend-coding-standard": "~1.0.0",
                 "zendframework/zend-config": "^3.1 || ^2.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev",
-                    "dev-develop": "2.7-dev"
+                    "dev-master": "2.7-dev",
+                    "dev-develop": "2.8-dev"
                 }
             },
             "autoload": {
@@ -1716,31 +1715,34 @@
             "description": "provides an easy interface for performing Hyper-Text Transfer Protocol (HTTP) requests",
             "homepage": "https://github.com/zendframework/zend-http",
             "keywords": [
+                "ZendFramework",
                 "http",
-                "zf2"
+                "http client",
+                "zend",
+                "zf"
             ],
-            "time": "2017-03-07T20:11:07+00:00"
+            "time": "2017-10-30T09:34:06+00:00"
         },
         {
             "name": "zendframework/zend-hydrator",
-            "version": "dev-develop",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-hydrator.git",
-                "reference": "f23dbf7a295dcfe579da435b8793add2ec4133fc"
+                "reference": "c16f3d471c2bbef0568ce9ae1fef892321237ee8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-hydrator/zipball/f23dbf7a295dcfe579da435b8793add2ec4133fc",
-                "reference": "f23dbf7a295dcfe579da435b8793add2ec4133fc",
+                "url": "https://api.github.com/repos/zendframework/zend-hydrator/zipball/c16f3d471c2bbef0568ce9ae1fef892321237ee8",
+                "reference": "c16f3d471c2bbef0568ce9ae1fef892321237ee8",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0 || ^5.6",
+                "php": "^5.6 || ^7.0",
                 "zendframework/zend-stdlib": "^3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.0.10 || ^5.7.17",
+                "phpunit/phpunit": "^5.7.21 || ^6.3",
                 "zendframework/zend-coding-standard": "~1.0.0",
                 "zendframework/zend-eventmanager": "^3.0",
                 "zendframework/zend-filter": "^2.6",
@@ -1759,8 +1761,8 @@
                 "branch-alias": {
                     "dev-release-1.0": "1.0-dev",
                     "dev-release-1.1": "1.1-dev",
-                    "dev-master": "2.2-dev",
-                    "dev-develop": "2.3-dev"
+                    "dev-master": "2.3-dev",
+                    "dev-develop": "2.4-dev"
                 },
                 "zf": {
                     "component": "Zend\\Hydrator",
@@ -1781,7 +1783,7 @@
                 "hydrator",
                 "zf2"
             ],
-            "time": "2017-05-17T18:42:34+00:00"
+            "time": "2017-10-02T15:02:51+00:00"
         },
         {
             "name": "zendframework/zend-inputfilter",
@@ -2011,26 +2013,26 @@
         },
         {
             "name": "zendframework/zend-paginator",
-            "version": "dev-develop",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-paginator.git",
-                "reference": "0fce278cc95c4b75b7f506e48f3b85389afbdd33"
+                "reference": "4e02f3472d4f2ce568d15730f0caa25e67e18c99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-paginator/zipball/0fce278cc95c4b75b7f506e48f3b85389afbdd33",
-                "reference": "0fce278cc95c4b75b7f506e48f3b85389afbdd33",
+                "url": "https://api.github.com/repos/zendframework/zend-paginator/zipball/4e02f3472d4f2ce568d15730f0caa25e67e18c99",
+                "reference": "4e02f3472d4f2ce568d15730f0caa25e67e18c99",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5 || ^7.0",
+                "php": "^7.0 || ^5.6",
                 "zendframework/zend-stdlib": "^2.7 || ^3.0"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "1.7.*",
-                "phpunit/phpunit": "~4.0",
+                "phpunit/phpunit": "^6.2.1 || ^5.7.15",
                 "zendframework/zend-cache": "^2.6.1",
+                "zendframework/zend-coding-standard": "~1.0.0",
                 "zendframework/zend-config": "^2.6.0",
                 "zendframework/zend-db": "^2.7",
                 "zendframework/zend-filter": "^2.6.1",
@@ -2049,8 +2051,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev",
-                    "dev-develop": "2.8-dev"
+                    "dev-master": "2.8-dev",
+                    "dev-develop": "2.9-dev"
                 },
                 "zf": {
                     "component": "Zend\\Paginator",
@@ -2072,7 +2074,7 @@
                 "paginator",
                 "zf2"
             ],
-            "time": "2017-06-03T21:46:09+00:00"
+            "time": "2017-11-01T20:53:14+00:00"
         },
         {
             "name": "zendframework/zend-router",
